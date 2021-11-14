@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<title>Technical Documentation Page</title>
+<link rel="stylesheet" type="text/css" href="doc.css" />
+
+</head>
+<body>
+<nav id="navbar">
+  <header>C# Documentation</header>
+  <ul>
+    <li><a class="nav-link" href="#Introduction">Introduction</a></li>
+    <li>
+      <a class="nav-link" href="#What_you_should_already_know"
+        >What you should already know</a>
+    </li>
+    <li>
+      <a class="nav-link" href="#C#_and_C++">C# and C++</a>
+    </li>
+    <li><a class="nav-link" href="#Hello_world">Hello world</a></li>
+    <li><a class="nav-link" href="#Variables">Variables</a></li>
+    <li>
+      <a class="nav-link" href="#Declaring_variables">Declaring variables</a>
+    </li>
+    <li><a class="nav-link" href="#Variable_scope">Variable scope</a></li>
+    <li><a class="nav-link" href="#Global_variables">Global variables</a></li>
+    <li><a class="nav-link" href="#Constants">Constants</a></li>
+    <li><a class="nav-link" href="#Data_types">Data types</a></li>
+    <li>
+      <a class="nav-link" href="#if...else_statement">if...else statement</a>
+    </li>
+    <li><a class="nav-link" href="#while_statement">while statement</a></li>
+    <li>
+      <a class="nav-link" href="#Function_declarations"
+        >Function declarations</a
+      >
+    </li>
+    <li><a class="nav-link" href="#Reference">Reference</a></li>
+  </ul>
+</nav>
+<main id="main-doc">
+  <section class="main-section" id="Introduction">
+    <header>Introduction</header>
+    <article>
+      <p>
+        C# (pronounced "See Sharp") is a modern, object-oriented, and type-safe programming language. C# enables developers to build many types of secure and robust applications that run in .NET. C# has its roots in the C family of languages and will be immediately familiar to C, C++, Java, and JavaScript programmers. This tour provides an overview of the major components of the language in C# 8 and earlier. If you want to explore the language through interactive examples, try the introduction to C# tutorials.
+      </p>
+
+      <p>
+        Several C# features help create robust and durable applications. Garbage collection automatically reclaims memory occupied by unreachable unused objects. Nullable types guard against variables that don't refer to allocated objects. Exception handling provides a structured and extensible approach to error detection and recovery. Lambda expressions support functional programming techniques. Language Integrated Query (LINQ) syntax creates a common pattern for working with data from any source. Language support for asynchronous operations provides syntax for building distributed systems. C# has a unified type system. All C# types, including primitive types such as int and double, inherit from a single root object type. All types share a set of common operations. Values of any type can be stored, transported, and operated upon in a consistent manner. Furthermore, C# supports both user-defined reference types and value types. C# allows dynamic allocation of objects and in-line storage of lightweight structures. C# supports generic methods and types, which provide increased type safety and performance. C# provides iterators, which enable implementers of collection classes to define custom behaviors for client code.
+      </p>
+      <p>C# emphasizes versioning to ensure programs and libraries can evolve over time in a compatible manner. Aspects of C#'s design that were directly influenced by versioning considerations include the separate virtual and override modifiers, the rules for method overload resolution, and support for explicit interface member declarations.</p>
+    </article>
+  </section>
+  <section class="main-section" id="What_you_should_already_know">
+    <header>What you should already know</header>
+    <article>
+      <p>As an object-oriented language, C# supports the concepts of encapsulation, inheritance, and polymorphism. A class may inherit directly from one parent class, and it may implement any number of interfaces. Methods that override virtual methods in a parent class require the override keyword as a way to avoid accidental redefinition. In C#, a struct is like a lightweight class; it's a stack-allocated type that can implement interfaces but doesn't support inheritance. C# provides record class, and record struct types which are types whose purpose is primarily storing data values.</p>
+    </article>
+  </section>
+  <section class="main-section" id="C#_and_C++">
+    <header>C# and C++</header>
+    <article>
+        <p>
+        C# is a general-purpose, modern and object-oriented programming language pronounced as “C sharp”. It was developed by Microsoft led by Anders Hejlsberg and his team. 
+      </p>
+      <p>
+        C++ is a statically typed, multiparadigm, and object-oriented programming language. In beginning, C++ was termed as C with classes. It was developed by Bjarne Stroustrup at AT & T Bell Laboratories. 
+      </p>
+    </article>
+  </section>
+  <section class="main-section" id="Hello_world">
+    <header>Hello world</header>
+    <article>
+      To get started with writing C#, open the Scratchpad and write your
+      first "Hello world" C# code:
+      <code
+        >Console.WriteLine("Hello World!");
+
+      </code>
+
+      Select the code in the pad and hit Ctrl+R to watch it unfold in your
+      browser!
+    </article>
+  </section>
+  <section class="main-section" id="Variables">
+    <header>Variables</header>
+    <p>
+      Your first program is limited to printing one message. You can write more useful programs by using variables. A variable is a symbol you can use to run the same code with different values. Let's try it! Replace the code you've written in the interactive window with the following code:
+    </p>
+  </section>
+  <section class="main-section" id="Declaring_variables">
+    <header>Declaring variables</header>
+    <article>
+      You can declare a variable
+      <p>
+          The first line declares a variable, aFriend, and assigns it a value, "Bill". The second line prints out the name.
+        <code>string aFriend = "Bill";
+Console.WriteLine(aFriend);</code>
+      </p>
+      <p>
+        You can assign different values to any variable you declare. You can change the name to one of your friends. Add these two lines in the interactive window following the code you've already added. Make sure you keep the declaration of the aFriend variable and its initial assignment.
+           <code>aFriend = "Maira";
+Console.WriteLine(aFriend);</code>
+      </p>
+      <p>
+        Notice that the same line of code prints two different messages, based on the value stored in the aFriend variable.
+
+You may have also noticed that the word "Hello" was missing in the last two messages. Let's fix that now. Modify the lines that print the message to the following:
+          <code>Console.WriteLine("Hello " + aFriend);</code>
+      </p>
+        <p>
+       Select Run again to see the results.
+
+You've been using + to build strings from variables and constant strings. There's a better way. You can place a variable between { and } characters to tell C# to replace that text with the value of the variable.
+
+This is called String interpolation.
+
+If you add a $ before the opening quote of the string, you can then include variables, like aFriend, inside the string between curly braces. Give it a try:
+           <code>Console.WriteLine($"Hello {aFriend}");</code>
+      </p>
+        <p>Select Run again to see the results. Instead of "Hello {aFriend}", the message should be "Hello Maira".</p>
+    </article>
+  </section>
+  <section class="main-section" id="Variable_scope">
+    <header>Variable scope</header>
+    <article>
+      <p>
+      The part of the program where a particular variable is accessible is termed as the Scope of that variable. A variable can be defined in a class, method, loop etc. In C/C++, all identifiers are lexically (or statically) scoped, i.e.scope of a variable can be determined at compile time and independent of the function call stack. But the C# programs are organized in the form of classes.
+
+
+      </p>
+        <ol>
+        <li>Class Level Scope</li>
+         <li>Method Level Scope</li>
+        <li>Block Level Scope</li>
+        </ol>
+        <p>
+            Class Level Scope
+   Declaring the variables in a class but outside any method can be directly accessed anywhere in the class.
+These variables are also termed as the fields or class members.
+Class level scoped variable can be accessed by the non-static methods of the class in which it is declared.
+Access modifier of class level variables doesn’t affect their scope within a class.
+Member variables can also be accessed outside the class by using the access modifiers.
+            <code>// C# program to illustrate the
+// Class Level Scope of variables
+using System;
+
+// declaring a Class
+class GFG { // from here class level scope starts
+
+	// this is a class level variable
+	// having class level scope
+	int a = 10;
+
+	// declaring a method
+	public void display()
+	{
+		// accessing class level variable
+		Console.WriteLine(a);
+
+	} // here method ends
+
+} // here class level scope ends
+</code>
+
+
+      </p>
+         <p>
+   Method Level Scope
+Variables that are declared inside a method have method level scope. These are not accessible outside the method.
+However, these variables can be accessed by the nested code blocks inside a method.
+These variables are termed as the local variables.
+There will be a compile-time error if these variables are declared twice with the same name in the same scope.
+These variables don’t exist after method’s execution is over.
+            <code>// C# program to illustrate the
+// Method Level Scope of variables
+using System;
+
+// declaring a Class
+class GFG { // from here class level scope starts
+
+	// declaring a method
+	public void display()
+
+	{ // from here method level scope starts
+
+		// this variable has
+		// method level scope
+		int m = 47;
+
+		// accessing method level variable
+		Console.WriteLine(m);
+
+	} // here method level scope ends
+
+	// declaring a method
+	public void display1()
+
+	{ // from here method level scope starts
+
+		// it will give compile time error as
+		// you are trying to access the local
+		// variable of method display()
+		Console.WriteLine(m);
+
+	} // here method level scope ends
+
+} // here class level scope ends
+
+</code>
+
+
+      </p>
+         <p>
+  Block Level Scope
+These variables are generally declared inside the for, while statement etc.
+These variables are also termed as the loop variables or statements variable as they have limited their scope up to the body of the statement in which it declared.
+Generally, a loop inside a method has three level of nested code blocks(i.e. class level, method level, loop level).
+The variable which is declared outside the loop is also accessible within the nested loops. It means a class level variable will be accessible to the methods and all loops. Method level variable will be accessible to loop and method inside that method.
+A variable which is declared inside a loop body will not be visible to the outside of loop body.
+            <code>// C# code to illustrate the Block
+// Level scope of variables
+using System;
+
+// declaring a Class
+class GFG
+
+{ // from here class level scope starts
+
+	// declaring a method
+	public void display()
+
+	{ // from here method level scope starts
+
+		// this variable has
+		// method level scope
+		int i = 0;
+
+		for (i = 0; i < 4; i++) {
+
+			// accessing method level variable
+			Console.WriteLine(i);
+		}
+
+		// here j is block level variable
+		// it is only accessible inside
+		// this for loop
+		for (int j = 0; j < 5; j++) {
+			// accessing block level variable
+			Console.WriteLine(j);
+		}
+
+		// this will give error as block level
+		// variable can't be accessed outside
+		// the block
+		Console.WriteLine(j);
+
+	} // here method level scope ends
+
+} // here class level scope ends
+// C# code to illustrate the Block
+// Level scope of variables
+using System;
+
+// declaring a Class
+class GFG
+
+{ // from here class level scope starts
+
+	// declaring a method
+	public void display()
+
+	{ // from here method level scope starts
+
+		// this variable has
+		// method level scope
+		int i = 0;
+
+		for (i = 0; i < 4; i++) {
+
+			// accessing method level variable
+			Console.WriteLine(i);
+		}
+
+		// here j is block level variable
+		// it is only accessible inside
+		// this for loop
+		for (int j = 0; j < 5; j++) {
+			// accessing block level variable
+			Console.WriteLine(j);
+		}
+
+		// this will give error as block level
+		// variable can't be accessed outside
+		// the block
+		Console.WriteLine(j);
+
+	} // here method level scope ends
+
+} // here class level scope ends
+// C# code to illustrate the Block
+// Level scope of variables
+using System;
+
+// declaring a Class
+class GFG
+
+{ // from here class level scope starts
+
+	// declaring a method
+	public void display()
+
+	{ // from here method level scope starts
+
+		// this variable has
+		// method level scope
+		int i = 0;
+
+		for (i = 0; i < 4; i++) {
+
+			// accessing method level variable
+			Console.WriteLine(i);
+		}
+
+		// here j is block level variable
+		// it is only accessible inside
+		// this for loop
+		for (int j = 0; j < 5; j++) {
+			// accessing block level variable
+			Console.WriteLine(j);
+		}
+
+		// this will give error as block level
+		// variable can't be accessed outside
+		// the block
+		Console.WriteLine(j);
+
+	} // here method level scope ends
+
+} // here class level scope ends
+
+
+
+</code>
+
+
+      </p>
+      
+    </article>
+  </section>
+  <section class="main-section" id="Global_variables">
+    <header>Global variables</header>
+    <article>
+      <p>
+        A global variable is a variable accessible anywhere, for example a field "counter" type integer. The global variable can be accessed from any function or class within the namespace.
+      </p>
+    </article>
+  </section>
+  <section class="main-section" id="Constants">
+    <header>Constants</header>
+    <article>
+      <p>
+        Constants are immutable values which are known at compile time and do not change for the life of the program. Constants are declared with the const modifier. Only the C# built-in types (excluding System.Object) may be declared as const. User-defined types, including classes, structs, and arrays, cannot be const. Use the readonly modifier to create a class, struct, or array that is initialized one time at run time (for example in a constructor) and thereafter cannot be changed.
+      </p>
+
+      <p>
+       C# does not support const methods, properties, or events.
+
+The enum type enables you to define named constants for integral built-in types (for example int, uint, long, and so on). For more information, see enum.
+
+Constants must be initialized as they are declared. For example:
+        </p>
+
+      <code>
+       class Calendar1
+{
+    public const int Months = 12;
+}
+            </code>
+    <p>
+      In this example, the constant Months is always 12, and it cannot be changed even by the class itself. In fact, when the compiler encounters a constant identifier in C# source code (for example, Months), it substitutes the literal value directly into the intermediate language (IL) code that it produces. Because there is no variable address associated with a constant at run time, const fields cannot be passed by reference and cannot appear as an l-value in an expression.
+        Multiple constants of the same type can be declared at the same time, for example:
+        </p>
+        <code>class Calendar2
+{
+            public const int Months = 12, Weeks = 52, Days = 365;</code>
+            <p>
+            The expression that is used to initialize a constant can refer to another constant if it does not create a circular reference. For example:
+            </p>
+            <code>class Calendar3
+{
+    public const int Months = 12;
+    public const int Weeks = 52;
+    public const int Days = 365;
+
+    public const double DaysPerWeek = (double) Days / (double) Weeks;
+    public const double DaysPerMonth = (double) Days / (double) Months;
+}</code>
+}           <p>Constants can be marked as public, private, protected, internal, protected internal or private protected. These access modifiers define how users of the class can access the constant. For more information, see Access Modifiers.
+
+Constants are accessed as if they were static fields because the value of the constant is the same for all instances of the type. You do not use the static keyword to declare them. Expressions that are not in the class that defines the constant must use the class name, a period, and the name of the constant to access the constant. For example:</p>
+        <code>int birthstones = Calendar.Months;</code>
+    </article>
+  </section>
+  <section class="main-section" id="Data_types">
+    <header>Data types</header>
+    <article>
+
+          <ul>
+              <p>Value Data Type</p>
+            <li>short, int, char, float, double etc</li>
+              <p>Reference Data Type</p>
+            <li>
+             String, Class, Object and Interface
+            </li>
+              <p>Pointer Data Type</p>
+              <li>Pointers</li>
+        </ul>
+    </article>
+  </section>
+  <section class="main-section" id="if...else_statement">
+    <header>if...else statement</header>
+    <article>
+        <p>
+      Use the if statement to specify a block of C# code to be executed if a condition is True.</p>
+
+      <code>if (condition) 
+{
+  // block of code to be executed if the condition is True
+}</code>
+        <p>
+      In the example below, we test two values to find out if 20 is greater than 18. If the condition is True, print some text:
+      </p>
+      <code> int time = 20;
+                if (time < 18) 
+{Console.WriteLine("Good day.");} 
+else 
+{Console.WriteLine("Good evening.");}
+                              // Outputs "Good evening." </code></code>
+        
+        <p>In the example above, time (22) is greater than 10, so the first condition is False. The next condition, in the else if statement, is also False, so we move on to the else condition since condition1 and condition2 is both False - and print to the screen "Good evening".</p>
+    </article>
+  </section>
+  <section class="main-section" id="while_statement">
+    <header>while statement</header>
+    <article>
+      <p>
+      The while loop loops through a block of code as long as a specified condition is True:
+      </p>
+
+
+
+      <code>while (condition) 
+{
+  // code block to be executed
+}</code>
+      <p>
+        In the example below, the code in the loop will run, over and over again, as long as a variable (i) is less than 5:
+      </p>
+  <code>int i = 0;
+while (i < 5) 
+{
+  Console.WriteLine(i);
+  i++;
+}   
+             </code>
+      
+        <p> The do/while loop is a variant of the while loop. This loop will execute the code block once, before checking if the condition is true, then it will repeat the loop as long as the condition is true.</p>
+
+      <code>do 
+{
+  // code block to be executed
+}
+while (condition); </code> 
+
+      <p>
+        The example below uses a do/while loop. The loop will always be executed at least once, even if the condition is false, because the code block is executed before the condition is tested:
+      </p>
+        <code>int i = 0;
+do 
+{
+  Console.WriteLine(i);
+  i++;
+}
+            while (i < 5);</code></code>
+
+    </article>
+  </section>
+      
+  <section class="main-section" id="Function_declarations">
+    <header>Function declarations</header>
+    <article>
+      A method is a code block that contains a series of statements. A program causes the statements to be executed by calling the method and specifying any required method arguments. In C#, every executed instruction is performed in the context of a method.
+
+The Main method is the entry point for every C# application and it's called by the common language runtime (CLR) when the program is started. In an application that uses top-level statements, the Main method is generated by the compiler and contains all top-level statements.
+
+      <p>
+        Method parameters are enclosed in parentheses and are separated by commas. Empty parentheses indicate that the method requires no parameters. This class contains four methods:
+      </p>
+
+      <code>fabstract class Motorcycle
+{
+    // Anyone can call this.
+    public void StartEngine() {/* Method statements here */ }
+
+    // Only derived classes can call this.
+    protected void AddGas(int gallons) { /* Method statements here */ }
+
+    // Derived classes can override the base class implementation.
+    public virtual int Drive(int miles, int speed) { /* Method statements here */ return 1; }
+
+    // Derived classes must implement this.
+    public abstract double GetTopSpeed();
+}</code>
+      <p>
+        Calling a method on an object is like accessing a field. After the object name, add a period, the name of the method, and parentheses. Arguments are listed within the parentheses, and are separated by commas. The methods of the Motorcycle class can therefore be called as in the following example:
+      </p>
+      <code>class TestMotorcycle : Motorcycle
+{
+
+    public override double GetTopSpeed()
+    {
+        return 108.4;
+    }
+
+    static void Main()
+    {
+
+        TestMotorcycle moto = new TestMotorcycle();
+
+        moto.StartEngine();
+        moto.AddGas(15);
+        moto.Drive(5, 20);
+        double speed = moto.GetTopSpeed();
+        Console.WriteLine("My top speed is {0}", speed);
+    }
+}</code>
+    </article>
+  </section>
+  <section class="main-section" id="Reference">
+    <header>Reference</header>
+    <article>
+      <ul>
+        <li>
+          All the documentation in this page is taken from
+          <a
+            href="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/constants"
+            target="_blank"
+            >Microsoft</a
+          >
+             <a
+            href="https://www.javatpoint.com/csharp-data-types"
+            target="_blank"
+            >JavaTpoint</a
+          >
+            <a
+            href="https://www.geeksforgeeks.org/scope-of-variables-in-c-sharp/"
+            target="_blank"
+            >GeeksforGeeks</a
+          >
+        </li>
+      </ul>
+    </article>
+  </section>
+</main>
+    </body>
+</html>
